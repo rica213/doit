@@ -1,6 +1,6 @@
-import Task from './Task.js';
-import { newTask } from './TaskElements.js';
-import currentTasks from './Tasks.js';
+import Task from './task.js';
+import { newTask } from './taskElements.js';
+import currentTasks from './tasks.js';
 
 const add = (event) => {
   if (newTask.value === ''){
@@ -8,6 +8,7 @@ const add = (event) => {
     return;
   } else {
     const task = new Task(newTask.value, false, currentTasks._tasks.length);
+    newTask.value = '';
     return task;
   }
 };

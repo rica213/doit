@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
-import Task from './Task.js';
-import { tasksContainer } from './TaskElements.js';
+import Task from './task.js';
+import { tasksContainer } from './taskElements.js';
 
 class Tasks {
   constructor() {
@@ -9,6 +9,7 @@ class Tasks {
 
   add = (task) => {
     this._tasks.push(task);
+    tasksContainer.innerHTML = '';
   };
 
   display = () => {
