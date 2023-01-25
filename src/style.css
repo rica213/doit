@@ -23,15 +23,18 @@ main {
 
 .new-task-container {
   position: relative;
-  width: 95%;
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid #c5c5c5;
 }
 
 #new-task {
-  padding: 1rem;
+  padding: 1rem 0;
+  padding-left: 0.25rem;
   font-size: medium;
-  width: 100%;
+  width: 99%;
   border: none;
-  border-bottom: 1px solid #c5c5c5;
+  
 }
 
 .fa-arrow-right {
@@ -39,6 +42,7 @@ main {
   top: 35%;
   right: 0;
   color: #c5c5c5;
+  padding-right: 1rem;
 }
 
 .list-tasks {
@@ -59,4 +63,10 @@ main {
   font-size: 1.25rem;
   color: gray;
   border: none;
+}
+
+.clear-tasks:hover {
+  filter: contrast(0.5);
+  color: #000;
+  cursor: pointer;
 }
