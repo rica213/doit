@@ -8,9 +8,9 @@ main {
   flex-direction: column;
   align-items: flex-start;
   margin: 0 auto;
-  -webkit-box-shadow: 8px 10px 5px 0px rgba(237, 236, 236, 0.75);
-  -moz-box-shadow: 8px 10px 5px 0px rgba(237, 236, 236, 0.75);
-  box-shadow: 8px 10px 5px 0px rgba(237, 236, 236, 0.75);
+  -webkit-box-shadow: 8px 10px 5px 0 rgba(237, 236, 236, 0.75);
+  -moz-box-shadow: 8px 10px 5px 0 rgba(237, 236, 236, 0.75);
+  box-shadow: 8px 10px 5px 0 rgba(237, 236, 236, 0.75);
   padding: 1rem 0;
   background-color: #fff;
 }
@@ -28,7 +28,7 @@ main {
 
 #new-task {
   padding: 1rem;
-  font-size:medium;
+  font-size: medium;
   width: 100%;
   border: none;
   border-bottom: 1px solid #c5c5c5;
@@ -37,7 +37,7 @@ main {
 .fa-arrow-right {
   position: absolute;
   top: 35%;
-  right:0;
+  right: 0;
 }
 
 .list-tasks {

@@ -1,6 +1,11 @@
+/* eslint-disable max-classes-per-file */
+/* eslint-disable no-underscore-dangle */
 import './style.css';
+
+const tasksContainer = document.querySelector('.list-tasks');
+
 class Task {
-  constructor(description, completed, index){
+  constructor(description, completed, index) {
     this._description = description;
     this._completed = completed;
     this._index = index;
@@ -17,7 +22,7 @@ class Tasks {
   };
 
   display = () => {
-    this._tasks.forEach((task)=>{
+    this._tasks.forEach((task) => {
       const taskItem = document.createElement('li');
       taskItem.innerHTML = `
       <input type="checkbox" id="task-${task._index}" name="task-${task._index}" value="Bike">
@@ -28,14 +33,13 @@ class Tasks {
   };
 }
 
-const firstTask = new Task ('wash dishes', false, 0);
-const secondTask = new Task ('fix car', false, 1);
-const thirdTask = new Task ('clean the house', false, 2);
+const firstTask = new Task('wash dishes', false, 0);
+const secondTask = new Task('fix car', false, 1);
+const thirdTask = new Task('clean the house', false, 2);
 
 const currentTasks = new Tasks();
 currentTasks.add(firstTask);
 currentTasks.add(secondTask);
 currentTasks.add(thirdTask);
 
-const tasksContainer = document.querySelector('.list-tasks');
 currentTasks.display();
