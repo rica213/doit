@@ -38,6 +38,19 @@ addBtn.addEventListener('click', (e) => {
     }
   });
 
+  tasksContainer.addEventListener('change', function (e) {
+    if(e.target.type==='checkbox'){
+      if(e.target.checked) {
+        currentTasks._tasks[e.target.parentElement.id]._completed = true;
+        save();
+      } else {
+        currentTasks._tasks[e.target.parentElement.id]._completed = false;
+        save();
+      }
+    } else {
+      e.preventDefault();
+    }
+  });
 
 window.addEventListener('load', () => {
   retrieve();
