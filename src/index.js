@@ -14,6 +14,7 @@ newTask.addEventListener('keypress', function (e) {
     } else {
       const task = add(e);
       currentTasks.add(task);
+      currentTasks.init();
       save();
       currentTasks.display();
     }
@@ -26,6 +27,7 @@ addBtn.addEventListener('click', (e) => {
   } else {
     const task = add(e);
     currentTasks.add(task);
+    currentTasks.init();
     save();
     currentTasks.display();
   }
@@ -73,4 +75,18 @@ clearTasksBtn.addEventListener('click', () => {
   currentTasks.updateIndex();
   save();
   currentTasks.display();
+});
+
+tasksContainer.addEventListener('click', function (e) {
+  if(e.target.className === 'fa fa-ellipsis-v') {
+    e.target.className = 'fa-solid fa-trash';
+  } else if (e.target.className === 'fa-solid fa-trash'){
+    currentTasks.delete(e.target.parentElement.id);
+    currentTasks.init();
+    currentTasks.updateIndex();
+    save();
+    currentTasks.display();
+  } else {
+    e.preventDefault();
+  }
 });

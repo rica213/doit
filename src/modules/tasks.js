@@ -7,9 +7,12 @@ class Tasks {
     this._tasks = [];
   }
 
+  init = () => {
+    tasksContainer.innerHTML = '';
+  };
+
   add = (task) => {
     this._tasks.push(task);
-    tasksContainer.innerHTML = '';
   };
 
   update = (desc, id) => {
@@ -23,7 +26,7 @@ class Tasks {
       taskItem.innerHTML = `
       <input type="checkbox" id="task-${task._index}" name="task-${task._index}" ${task._completed ? 'checked' : 'unchecked'}>
       <p contenteditable="true" class="description">${task._description}</p>
-      <i class="fa-solid fa-circle-ellipsis-vertical"></i><br>
+      <i class="fa fa-ellipsis-v" aria-hidden="true"><br>
       `;
       tasksContainer.appendChild(taskItem);
     });
@@ -38,11 +41,14 @@ class Tasks {
 
   updateIndex = () => {
     this._tasks.forEach((task, index) => {
-      task._index = index+1;
+      task._index = index + 1;
     });
   };
-}
 
+  delete = (index) => {
+    this._tasks = this._tasks.filter(task => task._index !== Number(index)+1);
+  };
+}
 
 const currentTasks = new Tasks();
 export default currentTasks;
