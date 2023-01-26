@@ -17,7 +17,7 @@ main {
 
 @media screen and (min-width: 768px) {
   main {
-    width: 60%;
+    width: 50%;
     margin-top: 10%;
   }
 }
@@ -80,7 +80,6 @@ main {
   display: flex;
   list-style: none;
   border-bottom: 1px solid #c5c5c5;
-  padding: 1rem 0;
 }
 
 .clear-tasks {

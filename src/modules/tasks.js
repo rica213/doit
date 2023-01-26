@@ -1,5 +1,4 @@
 /* eslint-disable no-underscore-dangle */
-import Task from './task.js';
 import { tasksContainer } from './taskElements.js';
 
 class Tasks {
@@ -26,16 +25,14 @@ class Tasks {
       taskItem.innerHTML = `
       <input type="checkbox" id="task-${task._index}" name="task-${task._index}" ${task._completed ? 'checked' : 'unchecked'}>
       <p contenteditable="true" class="description">${task._description}</p>
-      <i class="fa fa-ellipsis-v" aria-hidden="true"><br>
+      <i class="fa fa-ellipsis-v"><br>
       `;
       tasksContainer.appendChild(taskItem);
     });
   };
 
   deleteAllCompleted = () => {
-    this._tasks = this._tasks.filter(task =>
-      task._completed === false
-    );
+    this._tasks = this._tasks.filter((task) => task._completed === false);
     tasksContainer.innerHTML = '';
   };
 
@@ -46,7 +43,7 @@ class Tasks {
   };
 
   delete = (index) => {
-    this._tasks = this._tasks.filter(task => task._index !== Number(index)+1);
+    this._tasks = this._tasks.filter((task) => task._index !== Number(index) + 1);
   };
 }
 

@@ -1,4 +1,5 @@
-import currentTasks from "./tasks";
+/* eslint-disable no-underscore-dangle */
+import currentTasks from './tasks.js';
 
 export const save = () => {
   localStorage.setItem('tasks', JSON.stringify(currentTasks._tasks));
@@ -12,4 +13,4 @@ export const retrieve = () => {
   retrievedTasks.forEach((task) => {
     currentTasks.add(task);
   });
-}
+};
