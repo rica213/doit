@@ -86,7 +86,7 @@ tasksContainer.addEventListener('click', function (e) {
     currentTasks.updateIndex();
     save();
     currentTasks.display();
-  } else {
+  } else if (e.target.className === 'description'){
     e.preventDefault();
   }
 });

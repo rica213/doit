@@ -26,6 +26,7 @@ main {
   border-bottom: 1px solid #c5c5c5;
   width: 100%;
   color: gray;
+  padding-left: 0.25rem;
 }
 
 .new-task-container {
@@ -52,17 +53,21 @@ main {
   padding-right: 1rem;
 }
 
+.description {
+  flex-grow: 7;
+}
+
 .fa-ellipsis-v {
   align-self: center;
   padding-right: 1rem;
-  flex-grow: 8;
+  flex-grow: 2;
   text-align: right;
 }
 
 .fa-trash {
   align-self: center;
   padding-right: 1rem;
-  flex-grow: 8;
+  flex-grow: 2;
   text-align: right;
 }
 
