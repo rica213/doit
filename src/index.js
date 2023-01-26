@@ -28,9 +28,13 @@ addBtn.addEventListener('click', (e) => {
 
   tasksContainer.addEventListener('keypress', function (e) {
     if (e.target.className === 'description' && e.key === 'Enter') {
-      e.preventDefault();
-      currentTasks.update(e.target.textContent, e.target.parentElement.id);
-      save();
+      if(e.target.textContent){
+        e.preventDefault();
+        currentTasks.update(e.target.textContent, e.target.parentElement.id);
+        save();
+      } else {
+        e.preventDefault();
+      }
     }
   });
 

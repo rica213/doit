@@ -21,12 +21,16 @@ class Tasks {
       const taskItem = document.createElement('li');
       taskItem.id = index;
       taskItem.innerHTML = `
-      <input type="checkbox" id="task-${task._index}" name="task-${task._index}" value="Bike">
+      <input type="checkbox" id="task-${task._index}" name="task-${task._index}" ${task.completed ? 'checked' : 'unchecked'} onchange="console.log(this)">
       <p contenteditable="true" class="description">${task._description}</p>
       <i class="fa-solid fa-circle-ellipsis-vertical"></i><br>
       `;
       tasksContainer.appendChild(taskItem);
     });
+  };
+
+  hi = () => {
+    console.log('hi');
   };
 }
 
