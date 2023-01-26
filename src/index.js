@@ -39,12 +39,18 @@ addBtn.addEventListener('click', (e) => {
   });
 
   tasksContainer.addEventListener('change', function (e) {
+    let desc = currentTasks._tasks[e.target.parentElement.id]._description; //not striked
     if(e.target.type==='checkbox'){
       if(e.target.checked) {
         currentTasks._tasks[e.target.parentElement.id]._completed = true;
+        e.target.nextElementSibling.innerHTML = `<strike>${desc}</strike>`;
+        currentTasks._tasks[e.target.parentElement.id]._description = `<strike>${desc}</strike>`;
         save();
       } else {
         currentTasks._tasks[e.target.parentElement.id]._completed = false;
+        desc = e.target.nextElementSibling.innerHTML.replaceAll(/(<strike>|<\/strike>)/g, '');
+        e.target.nextElementSibling.innerHTML = desc;
+        currentTasks._tasks[e.target.parentElement.id]._description = desc;
         save();
       }
     } else {

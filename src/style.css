@@ -15,6 +15,13 @@ main {
   background-color: #fff;
 }
 
+@media screen and (min-width: 768px) {
+  main {
+    width: 60%;
+    margin-top: 10%;
+  }
+}
+
 .title {
   border-bottom: 1px solid #c5c5c5;
   width: 100%;
