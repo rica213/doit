@@ -53,8 +53,9 @@
 > Describe between 1-3 key features of the application.
 
 - **[add task]**
+- **[edit task description]**
 - **[remove task]**
-- **[move task]**
+- **[remove all completed tasks]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -62,7 +63,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](#)
+- [Live Demo Link](https://rica213.github.io/to-do-list/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -109,9 +110,7 @@ Example commands:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[move task]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
