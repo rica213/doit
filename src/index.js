@@ -20,9 +20,20 @@ newTask.addEventListener('keypress', function (e) {
 addBtn.addEventListener('click', (e) => {
   const task = add(e);
   currentTasks.add(task);
+  save();
   currentTasks.display();
   console.log(currentTasks._tasks);
 });
+
+
+  tasksContainer.addEventListener('keypress', function (e) {
+    if (e.target.className === 'description' && e.key === 'Enter') {
+      e.preventDefault();
+      currentTasks.update(e.target.textContent, e.target.parentElement.id);
+      save();
+    }
+  });
+
 
 window.addEventListener('load', () => {
   retrieve();

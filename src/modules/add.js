@@ -7,7 +7,7 @@ const add = (event) => {
     event.preventDefault();
     return;
   } else {
-    const task = new Task(newTask.value, false, currentTasks._tasks.length);
+    const task = new Task(newTask.value, false, currentTasks._tasks.length+1);
     newTask.value = '';
     return task;
   }

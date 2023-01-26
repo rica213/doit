@@ -32,6 +32,7 @@ main {
   padding: 1rem 0;
   padding-left: 0.25rem;
   font-size: medium;
+  font-style: italic;
   width: 99%;
   border: none;
   
@@ -51,6 +52,7 @@ main {
 }
 
 .list-tasks li {
+  display: flex;
   list-style: none;
   border-bottom: 1px solid #c5c5c5;
   padding: 1rem 0;
