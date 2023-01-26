@@ -2,29 +2,34 @@
 import './style.css';
 import currentTasks from './modules/tasks';
 import add from './modules/add.js';
-import { addBtn, newTask, tasksContainer } from './modules/taskElements.js';
+import { addBtn, newTask, tasksContainer, clearTasksBtn } from './modules/taskElements.js';
 import { save, retrieve } from './modules/localeStorage.js';
 
 //add new task
 
 newTask.addEventListener('keypress', function (e) {
   if (e.key === 'Enter') {
-    const task = add(e);
-    currentTasks.add(task);
-    save();
-    currentTasks.display();
-    console.log(currentTasks._tasks);
+    if(newTask.value===''){
+      e.preventDefault();
+    } else {
+      const task = add(e);
+      currentTasks.add(task);
+      save();
+      currentTasks.display();
+    }
   }
 });
 
 addBtn.addEventListener('click', (e) => {
-  const task = add(e);
-  currentTasks.add(task);
-  save();
-  currentTasks.display();
-  console.log(currentTasks._tasks);
+  if(newTask.value===''){
+    e.preventDefault();
+  } else {
+    const task = add(e);
+    currentTasks.add(task);
+    save();
+    currentTasks.display();
+  }
 });
-
 
   tasksContainer.addEventListener('keypress', function (e) {
     if (e.target.className === 'description' && e.key === 'Enter') {
@@ -60,5 +65,12 @@ addBtn.addEventListener('click', (e) => {
 
 window.addEventListener('load', () => {
   retrieve();
+  currentTasks.display();
+});
+
+clearTasksBtn.addEventListener('click', () => {
+  currentTasks.deleteAllCompleted();
+  currentTasks.updateIndex();
+  save();
   currentTasks.display();
 });

@@ -28,7 +28,21 @@ class Tasks {
       tasksContainer.appendChild(taskItem);
     });
   };
+
+  deleteAllCompleted = () => {
+    this._tasks = this._tasks.filter(task =>
+      task._completed === false
+    );
+    tasksContainer.innerHTML = '';
+  };
+
+  updateIndex = () => {
+    this._tasks.forEach((task, index) => {
+      task._index = index+1;
+    });
+  };
 }
+
 
 const currentTasks = new Tasks();
 export default currentTasks;
