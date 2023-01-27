@@ -1,8 +1,7 @@
-/* eslint-disable no-underscore-dangle */
 import currentTasks from './tasks.js';
 
 export const save = () => {
-  localStorage.setItem('tasks', JSON.stringify(currentTasks._tasks));
+  localStorage.setItem('tasks', JSON.stringify(currentTasks.tasks));
 };
 
 export const retrieve = () => {

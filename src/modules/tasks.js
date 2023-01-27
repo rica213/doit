@@ -1,9 +1,8 @@
-/* eslint-disable no-underscore-dangle */
 import { tasksContainer } from './taskElements.js';
 
 class Tasks {
   constructor() {
-    this._tasks = [];
+    this.tasks = [];
   }
 
   init = () => {
@@ -11,20 +10,20 @@ class Tasks {
   };
 
   add = (task) => {
-    this._tasks.push(task);
+    this.tasks.push(task);
   };
 
   update = (desc, id) => {
-    this._tasks[id]._description = desc;
+    this.tasks[id].description = desc;
   };
 
   display = () => {
-    this._tasks.forEach((task, index) => {
+    this.tasks.forEach((task, index) => {
       const taskItem = document.createElement('li');
       taskItem.id = index;
       taskItem.innerHTML = `
-      <input type="checkbox" id="task-${task._index}" name="task-${task._index}" ${task._completed ? 'checked' : 'unchecked'}>
-      <p contenteditable="true" class="description">${task._description}</p>
+      <input type="checkbox" id="task-${task.index}" name="task-${task.index}" ${task.completed ? 'checked' : 'unchecked'}>
+      <p contenteditable="true" class="description">${task.description}</p>
       <i class="fa fa-ellipsis-v"><br>
       `;
       tasksContainer.appendChild(taskItem);
@@ -32,18 +31,18 @@ class Tasks {
   };
 
   deleteAllCompleted = () => {
-    this._tasks = this._tasks.filter((task) => task._completed === false);
+    this.tasks = this.tasks.filter((task) => task.completed === false);
     tasksContainer.innerHTML = '';
   };
 
   updateIndex = () => {
-    this._tasks.forEach((task, index) => {
-      task._index = index + 1;
+    this.tasks.forEach((task, index) => {
+      task.index = index + 1;
     });
   };
 
   delete = (index) => {
-    this._tasks = this._tasks.filter((task) => task._index !== Number(index) + 1);
+    this.tasks = this.tasks.filter((task) => task.index !== Number(index) + 1);
   };
 }
 

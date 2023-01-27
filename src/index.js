@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import './style.css';
 import currentTasks from './modules/tasks.js';
 import add from './modules/add.js';
@@ -48,18 +47,18 @@ tasksContainer.addEventListener('keypress', (e) => {
 });
 
 tasksContainer.addEventListener('change', (e) => {
-  let desc = currentTasks._tasks[e.target.parentElement.id]._description; // not striked
+  let desc = currentTasks.tasks[e.target.parentElement.id].description; // not striked
   if (e.target.type === 'checkbox') {
     if (e.target.checked) {
-      currentTasks._tasks[e.target.parentElement.id]._completed = true;
+      currentTasks.tasks[e.target.parentElement.id].completed = true;
       e.target.nextElementSibling.innerHTML = `<strike>${desc}</strike>`;
-      currentTasks._tasks[e.target.parentElement.id]._description = `<strike>${desc}</strike>`;
+      currentTasks.tasks[e.target.parentElement.id].description = `<strike>${desc}</strike>`;
       save();
     } else {
-      currentTasks._tasks[e.target.parentElement.id]._completed = false;
+      currentTasks.tasks[e.target.parentElement.id].completed = false;
       desc = e.target.nextElementSibling.innerHTML.replaceAll(/(<strike>|<\/strike>)/g, '');
       e.target.nextElementSibling.innerHTML = desc;
-      currentTasks._tasks[e.target.parentElement.id]._description = desc;
+      currentTasks.tasks[e.target.parentElement.id].description = desc;
       save();
     }
   } else {
