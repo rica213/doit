@@ -53,8 +53,9 @@
 > Describe between 1-3 key features of the application.
 
 - **[add task]**
+- **[edit task description]**
 - **[remove task]**
-- **[move task]**
+- **[remove all completed tasks]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -62,7 +63,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](#)
+- [Live Demo Link](https://rica213.github.io/to-do-list/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -70,7 +71,7 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-To get a local copy up and running, follow these steps.
+To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
@@ -78,14 +79,22 @@ In order to run this project you need:
 
 A **_browser_** or a **_ code editor_**
 
-Clone this repository to your desired folder:
+### Install <a name="install"></a>
 
+```js
+npm install
+```
 
-Example commands:
+To build a webpack bundle file,run
 
-```sh
-  cd my-folder
-  git clone git@github.com:rica213/to-do-list.git
+```js
+npm run build
+```
+
+If you want to build and run the local server, run
+
+```js
+npm start
 ```
 
 
@@ -109,9 +118,7 @@ Example commands:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[move task]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

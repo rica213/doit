@@ -15,23 +15,34 @@ main {
   background-color: #fff;
 }
 
+@media screen and (min-width: 768px) {
+  main {
+    width: 50%;
+    margin-top: 10%;
+  }
+}
+
 .title {
   border-bottom: 1px solid #c5c5c5;
   width: 100%;
   color: gray;
+  padding-left: 0.25rem;
 }
 
 .new-task-container {
   position: relative;
-  width: 95%;
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid #c5c5c5;
 }
 
 #new-task {
-  padding: 1rem;
+  padding: 1rem 0;
+  padding-left: 0.25rem;
   font-size: medium;
-  width: 100%;
+  font-style: italic;
+  width: 99%;
   border: none;
-  border-bottom: 1px solid #c5c5c5;
 }
 
 .fa-arrow-right {
@@ -39,6 +50,25 @@ main {
   top: 35%;
   right: 0;
   color: #c5c5c5;
+  padding-right: 1rem;
+}
+
+.description {
+  flex-grow: 7;
+}
+
+.fa-ellipsis-v {
+  align-self: center;
+  padding-right: 1rem;
+  flex-grow: 2;
+  text-align: right;
+}
+
+.fa-trash {
+  align-self: center;
+  padding-right: 1rem;
+  flex-grow: 2;
+  text-align: right;
 }
 
 .list-tasks {
@@ -47,9 +77,9 @@ main {
 }
 
 .list-tasks li {
+  display: flex;
   list-style: none;
   border-bottom: 1px solid #c5c5c5;
-  padding: 1rem 0;
 }
 
 .clear-tasks {
@@ -59,4 +89,10 @@ main {
   font-size: 1.25rem;
   color: gray;
   border: none;
+}
+
+.clear-tasks:hover {
+  filter: contrast(0.5);
+  color: #000;
+  cursor: pointer;
 }

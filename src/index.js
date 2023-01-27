@@ -1,45 +1,93 @@
-/* eslint-disable max-classes-per-file */
-/* eslint-disable no-underscore-dangle */
 import './style.css';
+import currentTasks from './modules/tasks.js';
+import add from './modules/add.js';
+import {
+  addBtn, newTask, tasksContainer, clearTasksBtn,
+} from './modules/taskElements.js';
+import { save, retrieve } from './modules/localeStorage.js';
 
-const tasksContainer = document.querySelector('.list-tasks');
+// add new task
 
-class Task {
-  constructor(description, completed, index) {
-    this._description = description;
-    this._completed = completed;
-    this._index = index;
+newTask.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    if (newTask.value === '') {
+      e.preventDefault();
+    } else {
+      const task = add(e);
+      currentTasks.add(task);
+      currentTasks.init();
+      save();
+      currentTasks.display();
+    }
   }
-}
+});
 
-class Tasks {
-  constructor() {
-    this._tasks = [];
+addBtn.addEventListener('click', (e) => {
+  if (newTask.value === '') {
+    e.preventDefault();
+  } else {
+    const task = add(e);
+    currentTasks.add(task);
+    currentTasks.init();
+    save();
+    currentTasks.display();
   }
+});
 
-  add = (task) => {
-    this._tasks.push(task);
-  };
+tasksContainer.addEventListener('keypress', (e) => {
+  if (e.target.className === 'description' && e.key === 'Enter') {
+    if (e.target.textContent) {
+      e.preventDefault();
+      currentTasks.update(e.target.textContent, e.target.parentElement.id);
+      save();
+    } else {
+      e.preventDefault();
+    }
+  }
+});
 
-  display = () => {
-    this._tasks.forEach((task) => {
-      const taskItem = document.createElement('li');
-      taskItem.innerHTML = `
-      <input type="checkbox" id="task-${task._index}" name="task-${task._index}" value="Bike">
-      <label for="task-${task._index}">${task._description}</label><br>
-      `;
-      tasksContainer.appendChild(taskItem);
-    });
-  };
-}
+tasksContainer.addEventListener('change', (e) => {
+  let desc = currentTasks.tasks[e.target.parentElement.id].description; // not striked
+  if (e.target.type === 'checkbox') {
+    if (e.target.checked) {
+      currentTasks.tasks[e.target.parentElement.id].completed = true;
+      e.target.nextElementSibling.innerHTML = `<strike>${desc}</strike>`;
+      currentTasks.tasks[e.target.parentElement.id].description = `<strike>${desc}</strike>`;
+      save();
+    } else {
+      currentTasks.tasks[e.target.parentElement.id].completed = false;
+      desc = e.target.nextElementSibling.innerHTML.replaceAll(/(<strike>|<\/strike>)/g, '');
+      e.target.nextElementSibling.innerHTML = desc;
+      currentTasks.tasks[e.target.parentElement.id].description = desc;
+      save();
+    }
+  } else {
+    e.preventDefault();
+  }
+});
 
-const firstTask = new Task('wash dishes', false, 0);
-const secondTask = new Task('fix car', false, 1);
-const thirdTask = new Task('clean the house', false, 2);
+window.addEventListener('load', () => {
+  retrieve();
+  currentTasks.display();
+});
 
-const currentTasks = new Tasks();
-currentTasks.add(firstTask);
-currentTasks.add(secondTask);
-currentTasks.add(thirdTask);
+clearTasksBtn.addEventListener('click', () => {
+  currentTasks.deleteAllCompleted();
+  currentTasks.updateIndex();
+  save();
+  currentTasks.display();
+});
 
-currentTasks.display();
+tasksContainer.addEventListener('click', (e) => {
+  if (e.target.className === 'fa fa-ellipsis-v') {
+    e.target.className = 'fa-solid fa-trash';
+  } else if (e.target.className === 'fa-solid fa-trash') {
+    currentTasks.delete(e.target.parentElement.id);
+    currentTasks.init();
+    currentTasks.updateIndex();
+    save();
+    currentTasks.display();
+  } else if (e.target.className === 'description') {
+    e.preventDefault();
+  }
+});
