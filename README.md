@@ -71,7 +71,7 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-To get a local copy up and running, follow these steps.
+To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
@@ -79,14 +79,22 @@ In order to run this project you need:
 
 A **_browser_** or a **_ code editor_**
 
-Clone this repository to your desired folder:
+### Install <a name="install"></a>
 
+```js
+npm install
+```
 
-Example commands:
+To build a webpack bundle file,run
 
-```sh
-  cd my-folder
-  git clone git@github.com:rica213/to-do-list.git
+```js
+npm run build
+```
+
+If you want to build and run the local server, run
+
+```js
+npm start
 ```
 
 
