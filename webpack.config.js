@@ -8,7 +8,8 @@ module.exports = {
     bundle: path.resolve(__dirname, './src/index.js'),
   },
   devServer: {
-    static: './dist',
+    watchFiles: path.join(__dirname, 'src'),
+    hot: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
