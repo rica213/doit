@@ -32,7 +32,6 @@ class Tasks {
 
   deleteAllCompleted = () => {
     this.tasks = this.tasks.filter((task) => task.completed === false);
-    tasksContainer.innerHTML = '';
   };
 
   updateIndex = () => {

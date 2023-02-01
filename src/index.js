@@ -73,6 +73,7 @@ window.addEventListener('load', () => {
 
 clearTasksBtn.addEventListener('click', () => {
   currentTasks.deleteAllCompleted();
+  currentTasks.init();
   currentTasks.updateIndex();
   save();
   currentTasks.display();
