@@ -5,8 +5,8 @@ class Tasks {
     this.tasks = [];
   }
 
-  init = () => {
-    tasksContainer.innerHTML = '';
+  init = (element) => {
+    element.innerHTML = '';
   };
 
   add = (task) => {

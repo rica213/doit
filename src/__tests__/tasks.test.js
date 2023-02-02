@@ -12,12 +12,20 @@ describe('UnitTests', () => {
     expect(currentTasks.tasks).toContain(newTask);
   });
 
-  test('remove a task inside our to do list', () => {
+  test('add another task inside our to do list', () => {
     const another = new Task('another dummy task', false, 2);
     currentTasks.add(another);
+    expect(currentTasks.tasks).toContain(another);
+  });
+
+  test('remove a task inside our to do list', () => {
     currentTasks.delete(0);
-    currentTasks.updateIndex();
     expect(currentTasks.tasks).toHaveLength(1);
+  });
+
+  test('update the index', () => {
+    currentTasks.updateIndex();
+    expect(currentTasks.tasks[0].index).toBe(1);
   });
 
   test('edit the description of a task', () => {
@@ -25,8 +33,27 @@ describe('UnitTests', () => {
     expect(currentTasks.tasks[0].description).toEqual('edited task description');
   });
 
-  test('The completed should be true or false', () => {
+  test('The completed should be true', () => {
     currentTasks.complete(0, true);
     expect(currentTasks.tasks[0].completed).toBe(true);
   });
+
+  test('add a third task inside our to do list', () => {
+    const thirdTask = new Task('third task', false, 2);
+    currentTasks.add(thirdTask);
+    expect(currentTasks.tasks).toContain(thirdTask);
+  });
+
+  test('The completed should be true', () => {
+    currentTasks.complete(1, true);
+    expect(currentTasks.tasks[1].completed).toBe(true);
+  });
+
+  test('delete all completed tasks', () => {
+    currentTasks.deleteAllCompleted();
+    expect(currentTasks.tasks).toEqual([]);
+  });
+
+
+
 });

@@ -15,7 +15,7 @@ newTask.addEventListener('keypress', (e) => {
     } else {
       const task = add(e);
       currentTasks.add(task);
-      currentTasks.init();
+      currentTasks.init(tasksContainer);
       save();
       currentTasks.display();
     }
@@ -30,7 +30,7 @@ addBtn.addEventListener('click', (e) => {
   } else {
     const task = add(e);
     currentTasks.add(task);
-    currentTasks.init();
+    currentTasks.init(tasksContainer);
     save();
     currentTasks.display();
   }
@@ -77,7 +77,7 @@ window.addEventListener('load', () => {
 
 clearTasksBtn.addEventListener('click', () => {
   currentTasks.deleteAllCompleted();
-  currentTasks.init();
+  currentTasks.init(tasksContainer);
   currentTasks.updateIndex();
   save();
   currentTasks.display();
@@ -90,7 +90,7 @@ tasksContainer.addEventListener('click', (e) => {
     e.target.className = 'fa-solid fa-trash';
   } else if (e.target.className === 'fa-solid fa-trash') {
     currentTasks.delete(e.target.parentElement.id);
-    currentTasks.init();
+    currentTasks.init(tasksContainer);
     currentTasks.updateIndex();
     save();
     currentTasks.display();
