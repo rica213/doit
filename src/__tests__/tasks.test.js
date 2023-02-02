@@ -21,7 +21,12 @@ describe('UnitTests', () => {
   });
 
   test('edit the description of a task', () => {
-    currentTasks.update('edited task description',0)
+    currentTasks.update('edited task description', 0);
     expect(currentTasks.tasks[0].description).toEqual('edited task description');
+  });
+
+  test('The completed should be true or false', () => {
+    currentTasks.complete(0, true);
+    expect(currentTasks.tasks[0].completed).toBe(true);
   });
 });

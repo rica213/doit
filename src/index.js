@@ -36,7 +36,7 @@ addBtn.addEventListener('click', (e) => {
   }
 });
 
-//edit description
+// edit description
 
 tasksContainer.addEventListener('keypress', (e) => {
   if (e.target.className === 'description' && e.key === 'Enter') {
@@ -83,7 +83,7 @@ clearTasksBtn.addEventListener('click', () => {
   currentTasks.display();
 });
 
-//delete a task
+// delete a task
 
 tasksContainer.addEventListener('click', (e) => {
   if (e.target.className === 'fa fa-ellipsis-v') {
