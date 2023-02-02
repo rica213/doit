@@ -3,8 +3,8 @@ import currentTasks from './modules/tasks.js';
 import add from './modules/add.js';
 import {
   addBtn, newTask, tasksContainer, clearTasksBtn,
-} from './modules/taskElements.js';
-import { save, retrieve } from './modules/localeStorage.js';
+} from './modules/task-elements.js';
+import { save, retrieve } from './modules/locale-storage.js';
 
 // add new task
 

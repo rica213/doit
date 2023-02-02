@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import { retrieve, save } from '../modules/localeStorage.js';
+import { retrieve, save } from '../modules/locale-storage.js';
 import currentTasks from '../modules/tasks.js';
 
 describe('locale storage', () => {

@@ -1,5 +1,5 @@
 import Task from './task.js';
-import { newTask } from './taskElements.js';
+import { newTask } from './task-elements.js';
 import currentTasks from './tasks.js';
 
 const add = (event) => {
