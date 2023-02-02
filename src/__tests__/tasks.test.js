@@ -54,6 +54,12 @@ describe('UnitTests', () => {
     expect(currentTasks.tasks).toEqual([]);
   });
 
-
-
+  test('empty the ul', () => {
+    document.body.innerHTML =
+      '<ul class="list-tasks"><li></li><li></li></ul>';
+    const tasksContainer = document.querySelector('.list-tasks');
+    currentTasks.init(tasksContainer);
+    const list = document.querySelectorAll('.list-tasks li');
+    expect(list).toHaveLength(0);
+  });
 });
