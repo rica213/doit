@@ -3,17 +3,12 @@ export const save = (instance) => {
 };
 
 export const retrieve = (instance) => {
-  const savedTasks = localStorage.getItem('tasks');
-  if (savedTasks === null) {
+  let retrievedTasks = localStorage.getItem('tasks');
+  if (retrievedTasks === null) {
     return;
   }
-  try {
-    const retrievedTasks = JSON.parse(savedTasks);
-    retrievedTasks.forEach((task) => {
-      instance.add(task);
-    });
-  }
-  catch (error) {
-    console.log(error);
-  }
+  retrievedTasks = JSON.parse(retrievedTasks);
+  retrievedTasks.forEach((task) => {
+    instance.add(task);
+  });
 };

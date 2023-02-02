@@ -13,7 +13,7 @@ describe('locale storage', () => {
     Object.defineProperty(window, 'localStorage', {
       value: {
         setItem: mockSetItem,
-        getItem: mockGetItem
+        getItem: mockGetItem,
       },
       writable: true,
     });
