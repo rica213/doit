@@ -17,7 +17,7 @@ newTask.addEventListener('keypress', (e) => {
       currentTasks.add(task);
       currentTasks.init(tasksContainer);
       save();
-      currentTasks.display();
+      currentTasks.display(tasksContainer);
     }
   }
 });
@@ -32,7 +32,7 @@ addBtn.addEventListener('click', (e) => {
     currentTasks.add(task);
     currentTasks.init(tasksContainer);
     save();
-    currentTasks.display();
+    currentTasks.display(tasksContainer);
   }
 });
 
@@ -72,7 +72,7 @@ tasksContainer.addEventListener('change', (e) => {
 
 window.addEventListener('load', () => {
   retrieve();
-  currentTasks.display();
+  currentTasks.display(tasksContainer);
 });
 
 clearTasksBtn.addEventListener('click', () => {
@@ -80,7 +80,7 @@ clearTasksBtn.addEventListener('click', () => {
   currentTasks.init(tasksContainer);
   currentTasks.updateIndex();
   save();
-  currentTasks.display();
+  currentTasks.display(tasksContainer);
 });
 
 // delete a task
@@ -93,7 +93,7 @@ tasksContainer.addEventListener('click', (e) => {
     currentTasks.init(tasksContainer);
     currentTasks.updateIndex();
     save();
-    currentTasks.display();
+    currentTasks.display(tasksContainer);
   } else if (e.target.className === 'description') {
     e.preventDefault();
   }

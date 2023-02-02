@@ -6,8 +6,8 @@ import Task from '../modules/task.js';
 import currentTasks from '../modules/tasks.js';
 
 describe('UnitTests', () => {
-  const newTask = new Task('a dummy task', false, 1);
   test('add new task inside our to do list', () => {
+    const newTask = new Task('a dummy task', false, 1);
     currentTasks.add(newTask);
     expect(currentTasks.tasks).toContain(newTask);
   });
@@ -55,11 +55,24 @@ describe('UnitTests', () => {
   });
 
   test('empty the ul', () => {
-    document.body.innerHTML =
-      '<ul class="list-tasks"><li></li><li></li></ul>';
+    document.body.innerHTML ='<ul class="list-tasks"><li></li><li></li></ul>';
     const tasksContainer = document.querySelector('.list-tasks');
     currentTasks.init(tasksContainer);
     const list = document.querySelectorAll('.list-tasks li');
     expect(list).toHaveLength(0);
   });
+
+  test('add new task inside our to do list', () => {
+    const newTask = new Task('a dummy task', false, 1);
+    currentTasks.add(newTask);
+    expect(currentTasks.tasks).toContain(newTask);
+  });
+
+  test('add another task inside our to do list', () => {
+    const another = new Task('another dummy task', false, 2);
+    currentTasks.add(another);
+    expect(currentTasks.tasks).toContain(another);
+  });
+
+
 });
