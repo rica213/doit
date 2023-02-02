@@ -54,12 +54,12 @@ tasksContainer.addEventListener('change', (e) => {
   let desc = currentTasks.tasks[e.target.parentElement.id].description; // not striked
   if (e.target.type === 'checkbox') {
     if (e.target.checked) {
-      currentTasks.tasks[e.target.parentElement.id].completed = true;
+      currentTasks.complete(e.target.parentElement.id, true);
       e.target.nextElementSibling.innerHTML = `<strike>${desc}</strike>`;
       currentTasks.tasks[e.target.parentElement.id].description = `<strike>${desc}</strike>`;
       save();
     } else {
-      currentTasks.tasks[e.target.parentElement.id].completed = false;
+      currentTasks.complete(e.target.parentElement.id, false);
       desc = e.target.nextElementSibling.innerHTML.replaceAll(/(<strike>|<\/strike>)/g, '');
       e.target.nextElementSibling.innerHTML = desc;
       currentTasks.tasks[e.target.parentElement.id].description = desc;

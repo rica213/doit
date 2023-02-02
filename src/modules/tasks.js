@@ -43,6 +43,10 @@ class Tasks {
   delete = (index) => {
     this.tasks = this.tasks.filter((task) => task.index !== Number(index) + 1);
   };
+
+  complete = (index, status) => {
+    this.tasks[index].completed = status;
+  }
 }
 
 const currentTasks = new Tasks();
