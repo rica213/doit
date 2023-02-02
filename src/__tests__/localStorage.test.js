@@ -1,15 +1,19 @@
 /**
  * @jest-environment jsdom
  */
-import { save } from '../modules/localeStorage.js';
+import { retrieve, save } from '../modules/localeStorage.js';
+import currentTasks from '../modules/tasks.js';
 
 describe('locale storage', () => {
   let mockSetItem;
+  let mockGetItem;
   beforeEach(() => {
     mockSetItem = jest.fn();
+    mockGetItem = jest.fn();
     Object.defineProperty(window, 'localStorage', {
       value: {
         setItem: mockSetItem,
+        getItem: mockGetItem
       },
       writable: true,
     });
@@ -23,5 +27,11 @@ describe('locale storage', () => {
     };
     save(ourDummyList);
     expect(mockSetItem).toHaveBeenCalledWith('tasks', JSON.stringify(ourDummyList.tasks));
+  });
+
+  it('retrieved saved tasks from the local storage', () => {
+    mockGetItem.mockReturnValue(JSON.stringify(currentTasks.tasks));
+    retrieve(currentTasks);
+    expect(mockGetItem).toHaveBeenCalledWith('tasks');
   });
 });
