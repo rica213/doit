@@ -74,5 +74,15 @@ describe('UnitTests', () => {
     expect(currentTasks.tasks).toContain(another);
   });
 
-
+  test('display tasks', () => {
+    document.body.innerHTML ='<ul class="list-tasks"></ul>';
+    const tasksContainer = document.querySelector('.list-tasks');
+    currentTasks.display(tasksContainer);
+    const firstList = tasksContainer.children[0];
+    const secondList = tasksContainer.children[1];
+    const p1 = firstList.querySelector('.description');
+    const p2 = secondList.querySelector('.description');
+    expect(p1.textContent).toBe('a dummy task');
+    expect(p2.textContent).toBe('another dummy task');
+  });
 });
