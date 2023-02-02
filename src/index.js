@@ -16,7 +16,7 @@ newTask.addEventListener('keypress', (e) => {
       const task = add(e);
       currentTasks.add(task);
       currentTasks.init(tasksContainer);
-      save();
+      save(currentTasks);
       currentTasks.display(tasksContainer);
     }
   }
@@ -31,7 +31,7 @@ addBtn.addEventListener('click', (e) => {
     const task = add(e);
     currentTasks.add(task);
     currentTasks.init(tasksContainer);
-    save();
+    save(currentTasks);
     currentTasks.display(tasksContainer);
   }
 });
@@ -43,7 +43,7 @@ tasksContainer.addEventListener('keypress', (e) => {
     if (e.target.textContent) {
       e.preventDefault();
       currentTasks.update(e.target.textContent, e.target.parentElement.id);
-      save();
+      save(currentTasks);
     } else {
       e.preventDefault();
     }
@@ -57,13 +57,13 @@ tasksContainer.addEventListener('change', (e) => {
       currentTasks.complete(e.target.parentElement.id, true);
       e.target.nextElementSibling.innerHTML = `<strike>${desc}</strike>`;
       currentTasks.tasks[e.target.parentElement.id].description = `<strike>${desc}</strike>`;
-      save();
+      save(currentTasks);
     } else {
       currentTasks.complete(e.target.parentElement.id, false);
       desc = e.target.nextElementSibling.innerHTML.replaceAll(/(<strike>|<\/strike>)/g, '');
       e.target.nextElementSibling.innerHTML = desc;
       currentTasks.tasks[e.target.parentElement.id].description = desc;
-      save();
+      save(currentTasks);
     }
   } else {
     e.preventDefault();
@@ -71,7 +71,7 @@ tasksContainer.addEventListener('change', (e) => {
 });
 
 window.addEventListener('load', () => {
-  retrieve();
+  retrieve(currentTasks);
   currentTasks.display(tasksContainer);
 });
 
@@ -79,7 +79,7 @@ clearTasksBtn.addEventListener('click', () => {
   currentTasks.deleteAllCompleted();
   currentTasks.init(tasksContainer);
   currentTasks.updateIndex();
-  save();
+  save(currentTasks);
   currentTasks.display(tasksContainer);
 });
 
@@ -92,7 +92,7 @@ tasksContainer.addEventListener('click', (e) => {
     currentTasks.delete(e.target.parentElement.id);
     currentTasks.init(tasksContainer);
     currentTasks.updateIndex();
-    save();
+    save(currentTasks);
     currentTasks.display(tasksContainer);
   } else if (e.target.className === 'description') {
     e.preventDefault();
