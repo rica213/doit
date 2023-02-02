@@ -16,6 +16,12 @@ describe('UnitTests', () => {
     const another = new Task('another dummy task', false, 2);
     currentTasks.add(another);
     currentTasks.delete(0);
+    currentTasks.updateIndex();
     expect(currentTasks.tasks).toHaveLength(1);
+  });
+
+  test('edit the description of a task', () => {
+    currentTasks.update('edited task description',0)
+    expect(currentTasks.tasks[0].description).toEqual('edited task description');
   });
 });

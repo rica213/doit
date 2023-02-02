@@ -22,6 +22,8 @@ newTask.addEventListener('keypress', (e) => {
   }
 });
 
+// add new task
+
 addBtn.addEventListener('click', (e) => {
   if (newTask.value === '') {
     e.preventDefault();
@@ -33,6 +35,8 @@ addBtn.addEventListener('click', (e) => {
     currentTasks.display();
   }
 });
+
+//edit description
 
 tasksContainer.addEventListener('keypress', (e) => {
   if (e.target.className === 'description' && e.key === 'Enter') {
@@ -78,6 +82,8 @@ clearTasksBtn.addEventListener('click', () => {
   save();
   currentTasks.display();
 });
+
+//delete a task
 
 tasksContainer.addEventListener('click', (e) => {
   if (e.target.className === 'fa fa-ellipsis-v') {
