@@ -1,12 +1,10 @@
-import { tasksContainer } from './taskElements.js';
-
 class Tasks {
   constructor() {
     this.tasks = [];
   }
 
-  init = () => {
-    tasksContainer.innerHTML = '';
+  init = (element) => {
+    element.innerHTML = '';
   };
 
   add = (task) => {
@@ -17,7 +15,7 @@ class Tasks {
     this.tasks[id].description = desc;
   };
 
-  display = () => {
+  display = (element) => {
     this.tasks.forEach((task, index) => {
       const taskItem = document.createElement('li');
       taskItem.id = index;
@@ -26,7 +24,7 @@ class Tasks {
       <p contenteditable="true" class="description">${task.description}</p>
       <i class="fa fa-ellipsis-v"><br>
       `;
-      tasksContainer.appendChild(taskItem);
+      element.appendChild(taskItem);
     });
   };
 
@@ -43,6 +41,10 @@ class Tasks {
   delete = (index) => {
     this.tasks = this.tasks.filter((task) => task.index !== Number(index) + 1);
   };
+
+  complete = (index, status) => {
+    this.tasks[index].completed = status;
+  }
 }
 
 const currentTasks = new Tasks();
