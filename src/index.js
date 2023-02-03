@@ -1,6 +1,6 @@
 import './style.css';
 import currentTasks from './modules/tasks.js';
-import add from './modules/add.js';
+import createTask from './modules/create-task.js';
 import {
   addBtn, newTask, tasksContainer, clearTasksBtn,
 } from './modules/task-elements.js';
@@ -13,7 +13,7 @@ newTask.addEventListener('keypress', (e) => {
     if (newTask.value === '') {
       e.preventDefault();
     } else {
-      const task = add(e);
+      const task = createTask(e);
       currentTasks.add(task);
       currentTasks.init(tasksContainer);
       save(currentTasks);
@@ -28,7 +28,7 @@ addBtn.addEventListener('click', (e) => {
   if (newTask.value === '') {
     e.preventDefault();
   } else {
-    const task = add(e);
+    const task = createTask(e);
     currentTasks.add(task);
     currentTasks.init(tasksContainer);
     save(currentTasks);
