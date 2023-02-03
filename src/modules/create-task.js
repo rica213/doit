@@ -12,4 +12,4 @@ const createTask = (event) => {
   return task;
 };
 
-export default add;
+export default createTask;
