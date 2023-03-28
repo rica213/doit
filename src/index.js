@@ -6,6 +6,7 @@ import {
 } from './modules/task-elements.js';
 import { save, retrieve } from './modules/locale-storage.js';
 
+
 // add new task
 
 newTask.addEventListener('keypress', (e) => {
@@ -98,3 +99,14 @@ tasksContainer.addEventListener('click', (e) => {
     e.preventDefault();
   }
 });
+
+// open menu
+const menu = document.getElementById("menu");
+menu.addEventListener("click", function () {
+  const header = document.getElementsByTagName("header")[0];
+  header.classList.toggle("open");
+  const curtain = document.getElementById("curtain");
+  curtain.classList.toggle("menu-opened");
+});
+
+// new list

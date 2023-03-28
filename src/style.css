@@ -1,7 +1,76 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: #c5c5c5;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+/* begin header */
+header {
+    position: fixed;
+    top: 0;
+    width: 330px;
+    z-index: 15
+}
+
+header #menu {
+    display: block;
+    height: 58px;
+    padding: 0 1.95em;
+}
+
+header #menu a {
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.fa-bars {
+  padding-top: 1rem;
+}
+
+header #nav-content .nav-background {
+    background: #fff;
+    height: 100%;
+    left: -330px;
+    position: fixed;
+    top: 0;
+    transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+    -webkit-transform: translateX(-110%);
+    -ms-transform: translateX(-110%);
+    transform: translateX(-110%);
+    width: 330px;
+    padding: 3rem 2rem;
+    cursor: pointer;
+}
+
+header.open #nav-content .nav-background {
+    -webkit-transform: translateX(330px);
+    -ms-transform: translateX(330px);
+    transform: translateX(330px)
+}
+
+#curtain {
+    background-color: #fff;
+    height: 1px;
+    position: fixed;
+    top: 0;
+    width: 1px;
+    z-index: -1
+}
+
+#curtain.menu-opened {
+    background-color: rgba(0, 0, 0, .4);
+    height: 100%;
+    width: 100%;
+    z-index: 1
+}
+
+/* end header */
 
 main {
   display: flex;

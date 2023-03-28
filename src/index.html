@@ -11,19 +11,32 @@
     <title>To do list | by Larissa</title>
   </head>
   <body>
+    <header>
+      <nav class="home" id="menu">
+        <a class="nav-trigger" href="#"><i class="fa-solid fa-bars"></i></a>
+      </nav>
+      <nav id="nav-content">
+        <div class="nav-background new-list">
+          <i class="fa-solid fa-plus"></i> New List
+        </div>
+      </nav>
+    </header>
+    <div id="curtain"></div>
+
     <main>
-      <h1 class="title">Today's To Do</h1>
-      <p class="new-task-container">
-        <input
-        type="text"
-        name="new-task"
-        id="new-task"
-        placeholder="Add to your list..."
-        />
-        <i class="fa-solid fa-arrow-right"></i>
-      </p>
-      <ul class="list-tasks"></ul>
-      <button type="button" class="clear-tasks">Clear all completed</button>
+      <section class="add-new-task">
+        <p class="new-task-container">
+          <input
+            type="text"
+            name="new-task"
+            id="new-task"
+            placeholder="Add to your list..."
+          />
+          <i class="fa-solid fa-arrow-right"></i>
+        </p>
+        <ul class="list-tasks"></ul>
+        <button type="button" class="clear-tasks">Clear all completed</button>
+      </section>
     </main>
   </body>
 </html>
