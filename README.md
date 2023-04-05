@@ -30,7 +30,6 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -49,8 +48,6 @@
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
-
-> Describe between 1-3 key features of the application.
 
 - **[add task]**
 - **[edit task description]**
@@ -84,7 +81,6 @@ A **_browser_** or a **_ code editor_**
 ```js
 npm install
 ```
-
 To build a webpack bundle file,run
 
 ```js
@@ -96,8 +92,6 @@ If you want to build and run the local server, run
 ```js
 npm start
 ```
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
@@ -115,8 +109,6 @@ npm start
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
 
 - [ ] **[move task]**
 
@@ -136,9 +128,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project give it a STAR
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -147,16 +137,8 @@ If you like this project...
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank:
-> Microverse
-> My standup team
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-> No Question yet
+- Microverse
+- My standup team
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
