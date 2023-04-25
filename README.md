@@ -5,7 +5,7 @@
 <!-- <img src="" alt="logo" width="140"  height="auto" /> -->
   <br/>
 
-  <h3><b>To do list</b></h3>
+  <h1><b>DOIT</b></h1>
 
 </div>
 
@@ -14,17 +14,16 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
+- [🛠 Built With](#built-with)
+  - [Tech Stack](#tech-stack)
+- [🪄 Key Features](#key-features)
+- [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -34,25 +33,27 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [To do list] <a name="about-project"></a>
+# 📖 DOIT <a name="about-project"></a>
 
 
-**[To do list ]** is a little web application that keep track of our daily tasks.
+**DOIT** is a user-friendly web application that keeps track of our daily tasks.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> **HTML**, **CSS**, and **Javascript** are used to implement this web app
+- HTML
+- CSS
+- JAVASCRIPT
 
 <!-- Features -->
 
-### Key Features <a name="key-features"></a>
+## 🪄 Key Features <a name="key-features"></a>
 
-- **[add task]**
-- **[edit task description]**
-- **[remove task]**
-- **[remove all completed tasks]**
+- **Ability to create and edit tasks**
+- **Ability to mark tasks as complete or incomplete**
+- **Ability to remove task**
+- **Ability to remove all completed tasks**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -70,11 +71,22 @@
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+### Setup <a name="setup"></a>
+
+First you need to clone this project in your chosen folder
+
+eg.
+```sh
+cd new_folder
+git clone git@github.com:rica213/to-do-list.git
+```
+
+### Prerequisites <a name="prerequisites"></a>
 
 In order to run this project you need:
 
-A **_browser_** or a **_ code editor_**
+- **IDE** (Integrated Development Environment) to make change on the code
+- **Browser** to run the application
 
 ### Install <a name="install"></a>
 
@@ -87,22 +99,31 @@ To build a webpack bundle file,run
 npm run build
 ```
 
+### Usage <a name="usage"></a>
+
 If you want to build and run the local server, run
 
 ```js
 npm start
 ```
+
+### Run tests <a name="run-tests"></a>
+
+```js
+npm test
+```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="larissa"></a>
+## 👥 Authors <a name="authors"></a>
 
 👤 **Larissa**
 
 - GitHub: [@rica213](https://github.com/rica213)
 - Twitter: [@alc3and](https://twitter.com/alc3and)
-- LinkedIn: [Larissa](https://linkedin.com/in/larissa-clarielle-andrainasoa-8768a3256/)
+- LinkedIn: [Larissa](https://linkedin.com/in/larissa-clarielle/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -110,7 +131,10 @@ npm start
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[move task]**
+- **Ability to rearrange task**
+- **Ability to set due dates and reminders for tasks**
+- **Ability to prioritize tasks**
+- **Ability to categorize tasks into different lists or projects**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -128,7 +152,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project give it a STAR
+If you like this project give it a **STAR**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
