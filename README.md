@@ -35,8 +35,9 @@
 
 # 📖 DOIT <a name="about-project"></a>
 
-
-**DOIT** is a user-friendly web application that keeps track of our daily tasks.
+This is a task management web application built with JavaScript that features an intuitive user interface. <br>
+Users can easily add, edit, and delete tasks, as well as set due dates and priorities. <br>
+The app automatically saves tasks, ensuring that users never lose progress. With this app, managing tasks has never been easier.
 
 ## 🛠 Built With <a name="built-with"></a>
 
