@@ -1,29 +1,113 @@
+html {
+  background-color: #000;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: #c5c5c5;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  max-width: 500px;
+  margin: 0 auto;
 }
+
+.hidden {
+  display: none;
+}
+
+/* begin header */
+header {
+  position: fixed;
+  top: 0;
+  z-index: 15;
+}
+
+header #menu {
+  display: block;
+  height: 58px;
+  padding: 0 1.95em;
+}
+
+header #menu a {
+  position: relative;
+  color: #fff;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.fa-bars {
+  padding-top: 1rem;
+}
+
+header #nav-content .nav-background {
+  height: 100%;
+  left: -250px;
+  position: fixed;
+  top: 0;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  -webkit-transform: translateX(-110%);
+  -ms-transform: translateX(-110%);
+  transform: translateX(-110%);
+  width: 250px;
+  padding: 3rem 2rem;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+header.open #nav-content .nav-background {
+  -webkit-transform: translateX(250px);
+  -ms-transform: translateX(250px);
+  transform: translateX(250px);
+}
+
+#curtain {
+  background-color: #fff;
+  height: 1px;
+  position: fixed;
+  top: 0;
+  width: 1px;
+  z-index: -1;
+}
+
+#curtain.menu-opened {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+/* end header */
 
 main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin: 0 auto;
-  box-shadow: 5px 5px 5px gray, 5px -5px 5px gray;
   padding: 1rem 0;
-  background-color: #fff;
+  background-color: #12ad20e8;
+  min-height: 100vh;
 }
 
-@media screen and (min-width: 768px) {
-  main {
-    width: 50%;
-    margin-top: 10%;
-  }
+/* add task begin */
+
+.add-new-task {
+  width: 80%;
+  margin: 2.5rem auto;
 }
 
-.title {
-  width: 99%;
-  color: gray;
-  padding-left: 0.25rem;
+.list-title {
+  text-align: center;
 }
 
 .new-task-container {
@@ -92,3 +176,88 @@ main {
 .list-tasks li {
   border-bottom: 1px solid #c5c5c5;
 }
+
+/* modal begin */
+
+/* The Modal (background) */
+.overlay {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 35%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+  margin: auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  max-width: 500px;
+}
+
+/* The Close Button */
+.close {
+  color: #fff;
+  float: right;
+  font-size: 1.75rem;
+  font-weight: bold;
+  position: relative;
+  top: -25px;
+}
+
+.close:hover,
+.close:focus {
+  font-size: 1.875rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.new-list-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.new-list-form * {
+  padding: 0.5rem;
+}
+
+.input-label {
+  color: #fff;
+  font-weight: 700;
+}
+
+.new-list-input {
+  width: 80%;
+}
+
+.new-list-btn {
+  width: 35%;
+  background: rgba(48, 160, 5, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  transition: all 0.5s ease;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.new-list-btn:hover {
+  font-size: 1.15rem;
+}
+
+/* modal end */

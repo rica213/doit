@@ -1,14 +1,22 @@
 class Tasks {
-  constructor() {
+  constructor(description, index) {
+    this.description = description;
+    this.index = index;
     this.tasks = [];
   }
+
+  getDescription = () => this.description
+
+  getIndex = () => this.index
+
+  getListTasks = () => this.tasks
 
   init = (element) => {
     element.innerHTML = '';
   };
 
   add = (task) => {
-    this.tasks.push(task);
+    this.tasks.concat(task);
   };
 
   update = (desc, id) => {
@@ -47,5 +55,5 @@ class Tasks {
   }
 }
 
-const currentTasks = new Tasks();
-export default currentTasks;
+// const currentTasks = new Tasks();
+export default Tasks;

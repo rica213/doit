@@ -1,11 +1,31 @@
 import './style.css';
-import currentTasks from './modules/tasks.js';
+/* eslint-disable-next-line import/no-unresolved */
+import { nanoid } from 'nanoid';
+import Tasks from './modules/tasks.js';
 import createTask from './modules/create-task.js';
 import {
-  addBtn, newTask, tasksContainer, clearTasksBtn,
+  addBtn,
+  newTask,
+  tasksContainer,
+  clearTasksBtn,
+  newList,
+  curtain,
+  header,
+  menu,
+  modal,
+  close,
+  newListBtn,
+  newListInput,
+  addNewTask,
+  listTitle,
 } from './modules/task-elements.js';
 import { save, retrieve } from './modules/locale-storage.js';
 
+const ourList = new Map();
+
+const currentTasks = new Tasks('currentTasks', 1);
+
+ourList.set('1', 'currentTasks');
 // add new task
 
 newTask.addEventListener('keypress', (e) => {
@@ -56,11 +76,16 @@ tasksContainer.addEventListener('change', (e) => {
     if (e.target.checked) {
       currentTasks.complete(e.target.parentElement.id, true);
       e.target.nextElementSibling.innerHTML = `<strike>${desc}</strike>`;
-      currentTasks.tasks[e.target.parentElement.id].description = `<strike>${desc}</strike>`;
+      currentTasks.tasks[
+        e.target.parentElement.id
+      ].description = `<strike>${desc}</strike>`;
       save(currentTasks);
     } else {
       currentTasks.complete(e.target.parentElement.id, false);
-      desc = e.target.nextElementSibling.innerHTML.replaceAll(/(<strike>|<\/strike>)/g, '');
+      desc = e.target.nextElementSibling.innerHTML.replaceAll(
+        /(<strike>|<\/strike>)/g,
+        '',
+      );
       e.target.nextElementSibling.innerHTML = desc;
       currentTasks.tasks[e.target.parentElement.id].description = desc;
       save(currentTasks);
@@ -98,3 +123,42 @@ tasksContainer.addEventListener('click', (e) => {
     e.preventDefault();
   }
 });
+
+// open menu
+menu.addEventListener('click', () => {
+  header.classList.toggle('open');
+  curtain.classList.toggle('menu-opened');
+});
+
+// modal for a new list
+
+// When the user clicks the button, open the modal and close menu
+newList.addEventListener('click', () => {
+  modal.style.display = 'block';
+  header.classList.toggle('open');
+  curtain.classList.toggle('menu-opened');
+});
+
+// When the user clicks on <span> (x), close the modal
+close.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// When the user clicks anywhere outside of the modal, close it
+window.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+// create new list
+newListBtn.onclick = (event) => {
+  event.preventDefault();
+  if (newListInput.value !== '') {
+    const aNewList = new Tasks(newListInput.value, nanoid());
+    ourList.set(aNewList.getIndex(), aNewList.getDescription());
+    modal.style.display = 'none';
+    addNewTask.classList.remove('hidden');
+    listTitle.textContent = aNewList.getDescription();
+  }
+};
