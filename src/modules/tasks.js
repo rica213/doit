@@ -5,17 +5,11 @@ class Tasks {
     this.tasks = [];
   }
 
-  getDescription = () => {
-    return this.description;
-  }
+  getDescription = () => this.description
 
-  getIndex = () => {
-    return this.index;
-  }
+  getIndex = () => this.index
 
-  getListTasks = () => {
-    return this.tasks;
-  }
+  getListTasks = () => this.tasks
 
   init = (element) => {
     element.innerHTML = '';
