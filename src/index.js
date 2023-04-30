@@ -1,4 +1,5 @@
 import './style.css';
+/* eslint-disable-next-line import/no-unresolved */
 import { nanoid } from 'nanoid';
 import Tasks from './modules/tasks.js';
 import createTask from './modules/create-task.js';
