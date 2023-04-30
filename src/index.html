@@ -24,7 +24,20 @@
     <div id="curtain"></div>
 
     <main>
-      <section class="add-new-task">
+      <!-- The Modal -->
+      <div id="modal" class="overlay">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form class="new-list-form">
+            <label for="new-list-input" class="input-label">List Name</label>
+            <input type="text" id="new-list-input" class="new-list-input" placeholder="eg.Job searching" required />
+            <button type="button" class="new-list-btn">Save</button>
+          </form>
+        </div>
+      </div>
+      <section class="add-new-task hidden">
+        <h3 class="list-title"></h3>
         <p class="new-task-container">
           <input
             type="text"
