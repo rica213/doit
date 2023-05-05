@@ -5,7 +5,7 @@
 <!-- <img src="" alt="logo" width="140"  height="auto" /> -->
   <br/>
 
-  <h1><b>DOIT</b></h1>
+  <h1><b> 📟 DOIT 📑</b></h1>
 
 </div>
 
@@ -120,7 +120,7 @@ npm test
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Larissa**
+🧛🏽‍♀️ **Larissa**
 
 - GitHub: [@rica213](https://github.com/rica213)
 - Twitter: [@alc3and](https://twitter.com/alc3and)
@@ -153,7 +153,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project give it a **STAR**
+If you like this project give it a 🌟 **STAR** ⭐
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
