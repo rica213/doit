@@ -1,34 +1,66 @@
-class Tasks {
+/**
+ * @param {String} description
+ * @param {Integer} index
+ * @returns {TaskList}
+ */
+class TaskList {
   constructor(description, index) {
     this.description = description;
     this.index = index;
-    this.tasks = [];
+    this.tasks = []; // contains list of tasks
   }
 
-  getDescription = () => this.description
+  /**
+   * Getter for the instance variable description
+   * @returns {String} description
+   */
+  getDescription = () => this.description;
 
-  getIndex = () => this.index
+  /**
+   * Getter for the instance variable index
+   * @returns {Integer} index
+   */
+  getIndex = () => this.index;
 
-  getListTasks = () => this.tasks
+  /**
+   * Getter for the attribute tasks
+   * @returns {Task[]} tasks
+   */
+  getListTasks = () => this.tasks;
 
-  init = (element) => {
-    element.innerHTML = '';
-  };
-
-  add = (task) => {
+  /**
+   * Add a new task to the task list
+   * @param {Task} task
+   */
+  addTask = (task) => {
     this.tasks.concat(task);
   };
 
-  update = (desc, id) => {
+  /** 
+   * Set description of the taskList
+   * @param {String} description
+  */
+  setDescription = (description) => {
+    this.description = description;
+  }
+
+
+/*   update = (desc, id) => {
     this.tasks[id].description = desc;
+  };
+
+  init = (element) => {
+    element.innerHTML = "";
   };
 
   display = (element) => {
     this.tasks.forEach((task, index) => {
-      const taskItem = document.createElement('li');
+      const taskItem = document.createElement("li");
       taskItem.id = index;
       taskItem.innerHTML = `
-      <input type="checkbox" id="task-${task.index}" name="task-${task.index}" ${task.completed ? 'checked' : 'unchecked'}>
+      <input type="checkbox" id="task-${task.index}" name="task-${
+        task.index
+      }" ${task.completed ? "checked" : "unchecked"}>
       <p contenteditable="true" class="description">${task.description}</p>
       <i class="fa fa-ellipsis-v"><br>
       `;
@@ -52,7 +84,7 @@ class Tasks {
 
   complete = (index, status) => {
     this.tasks[index].completed = status;
-  }
+  }; */
 }
 
 // const currentTasks = new Tasks();
