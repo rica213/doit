@@ -1,31 +1,52 @@
 export default class Task {
+  /**
+   * @param {String} description
+   * @param {Boolean} completed
+   * @param {Integer} index
+   * @returns {Task}
+  */
   constructor(description, completed, index) {
     this.description = description;
     this.completed = completed;
     this.index = index;
   }
 
-  /* return the status of the task */
+  /**
+   * Getter for instance variable completed
+   * @returns {Boolean} completed
+  */
   getStatus = () => {
     return this.completed;
   }
 
-  /* return the index of the task */
-  getId = () => {
+  /**
+   * Getter for instance variable index
+   * @returns {Integer} index
+  */
+  getIndex = () => {
     return this.index
   }
 
-  /* return the description of the task */
+  /**
+   * Getter for instance variable description
+   * @returns {String} description
+  */
   getDescription = () => {
     return this.description;
   }
 
-  /* set the status of the task */
+  /**
+   * Set status of the task
+   * @param {Boolean} status 
+  */
   setStatus = (status) => {
     this.completed = status;
   }
 
-  /* set the description of the task */
+  /**
+   * Set the description of the task
+   * @param {String} description 
+  */
   setDescription = (description) => { 
     this.description = description;
   }
