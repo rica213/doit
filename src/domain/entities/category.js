@@ -2,7 +2,7 @@ class Category {
   /**  
    *  @param {String} description 
    *  @param {Integer} index
-   *  @return {Category}
+   *  @returns {Category}
   */
   constructor(description, index) {
     this.description = description;
@@ -12,7 +12,7 @@ class Category {
 
   /**
    * Getter for description
-   * @return {String}
+   * @returns {String}
   */
   getDescription = () => {
     return this.description;
@@ -20,7 +20,7 @@ class Category {
 
   /**
    * Getter for index
-   * @return {Integer}
+   * @returns {Integer}
   */ 
   getIndex = () => {
     return this.index;
@@ -28,7 +28,7 @@ class Category {
 
   /**
    * Getter for list of tasks
-   * @return {Task[]}
+   * @returns {Task[]}
   */ 
   getTasks = () => {  
     return this.tasks;
