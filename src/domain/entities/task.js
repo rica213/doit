@@ -4,4 +4,29 @@ export default class Task {
     this.completed = completed;
     this.index = index;
   }
+
+  /* return the status of the task */
+  getStatus = () => {
+    return this.completed;
+  }
+
+  /* return the index of the task */
+  getId = () => {
+    return this.index
+  }
+
+  /* return the description of the task */
+  getDescription = () => {
+    return this.description;
+  }
+
+  /* set the status of the task */
+  setStatus = (status) => {
+    this.completed = status;
+  }
+
+  /* set the description of the task */
+  setDescription = (description) => { 
+    this.description = description;
+  }
 }
