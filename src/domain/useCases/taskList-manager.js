@@ -72,7 +72,7 @@ export default class TaskListManager {
     return this.taskListRepository.assignTaskToTaskList(
       taskId,
       taskListId,
-      taskRepository
+      taskRepository,
     );
   }
 

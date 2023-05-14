@@ -1,5 +1,5 @@
-import fs from "fs";
-import TaskList from "../entities/taskList";
+import fs from 'fs';
+import TaskList from '../entities/taskList';
 
 export default class TaskListRepository {
   /**
@@ -121,7 +121,7 @@ export default class TaskListRepository {
   async assignTaskToTaskList(taskId, taskListId, taskRepository) {
     const taskLists = this.getAllTaskLists();
     const taskList = taskLists.find(
-      (taskList) => taskList.index === taskListId
+      (taskList) => taskList.index === taskListId,
     );
     const task = taskRepository.getTaskById(taskId);
     if (!taskList || !task) {
@@ -140,7 +140,7 @@ export default class TaskListRepository {
   async removeTaskFromTaskList(taskId, taskListId) {
     const taskLists = this.getAllTaskLists();
     const taskList = taskLists.find(
-      (taskList) => taskList.index === taskListId
+      (taskList) => taskList.index === taskListId,
     );
 
     if (!taskList) {
