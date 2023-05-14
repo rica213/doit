@@ -28,11 +28,16 @@ export default class TaskRepository {
 
   /** Gets one task with a specified id
    * @async
-   * @returns {Task}
+   * @param {Integer} id - The id of the task to return
+   * @returns {Task|null} - The task that has the given id, or null if task with the given id is not found
    */
   async getTaskById(id) {
     const tasks = await this.getAllTasks();
-    return tasks.find((task) => task.index === id);
+    const task = tasks.find((task) => task.index === id);
+    if (!task) {
+      return null;
+    }
+    return task;
   }
 
   /**
