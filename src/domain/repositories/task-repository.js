@@ -107,4 +107,18 @@ export default class TaskRepository {
       console.error(err);
     }
   }
+
+  /**
+   * Deletes all completed tasks and remove them from the JSON File
+   * @returns {Array<Task>} - An array of completed tasks
+   */
+  async deleteCompletedTasks() {
+    const tasks = await this.getAllTasks();
+    const completedTasks = tasks.filter((task) => task.completed);
+    completedTasks.forEach((task) => {
+      tasks.splice(tasks.indexOf(task), 1);
+    });
+    await this.saveTasks(tasks);
+    return completedTasks;
+  }
 }

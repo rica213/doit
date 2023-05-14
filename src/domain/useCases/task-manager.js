@@ -59,4 +59,12 @@ export default class TaskManager {
     task.setStatus(true);
     return this.taskRepository.updateTask(taskId, task);
   }
+
+  /**
+   * Deletes all completed tasks and remove them from the JSON File
+   * @returns {Array<Task>} - An array of completed tasks
+   */
+  deleteCompletedTasks() {
+    return this.taskRepository.deleteCompletedTasks();
+  }
 }
