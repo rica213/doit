@@ -32,7 +32,7 @@ export default class TaskRepository {
    */
   async getTaskById(id) {
     const tasks = await this.getAllTasks();
-    return tasks.find((task) => task.id === id);
+    return tasks.find((task) => task.index === id);
   }
 
   /**
@@ -58,7 +58,7 @@ export default class TaskRepository {
    */
   async updateTask(id, updatedTask) {
     const tasks = this.getAllTasks();
-    const index = tasks.findIndex((task) => task.id === id);
+    const index = tasks.findIndex((task) => task.index === id);
     if (index !== -1) {
       tasks[index] = {
         ...updatedTask,
@@ -78,7 +78,7 @@ export default class TaskRepository {
    */
   async deleteTask(id) {
     const tasks = this.getAllTasks();
-    const index = tasks.findIndex((task) => task.id === id);
+    const index = tasks.findIndex((task) => task.index === id);
     if (index !== -1) {
       const deletedTask = tasks[index];
       tasks.splice(index, 1);
